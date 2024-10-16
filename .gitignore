@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/TechDaniels.IdentityServer/bin/Debug/net8.0
+/TechDaniels.IdentityServer/obj
+/TechDaniels.IdentityServer.AdminAPI/bin/Debug/net8.0
+/TechDaniels.IdentityServer.AdminAPI/obj
+/TechDaniels.IdentityServer.Core/bin/Debug/net8.0
+/TechDaniels.IdentityServer.Core/obj
+/TechDaniels.IdentityServer.Data/bin/Debug/net8.0
+/TechDaniels.IdentityServer.Data/obj
+/TechDaniels.IdentityServer.Domain/bin/Debug/net8.0
+/TechDaniels.IdentityServer.Domain/obj
+/TechDaniels.IdentityServer.Services/bin/Debug/net8.0
+/TechDaniels.IdentityServer.Services/obj
