@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TechDaniels.IdentityServer.Core\TechDaniels.IdentityServer.Core.csproj" />
+    <ProjectReference Include="..\TechDaniels.IdentityServer.Data\TechDaniels.IdentityServer.Data.csproj" />
+    <ProjectReference Include="..\TechDaniels.IdentityServer.Domain\TechDaniels.IdentityServer.Domain.csproj" />
+    <ProjectReference Include="..\TechDaniels.IdentityServer.Services\TechDaniels.IdentityServer.Services.csproj" />
+  </ItemGroup>
+
+</Project>
