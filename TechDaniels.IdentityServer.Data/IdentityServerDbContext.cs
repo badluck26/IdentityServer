@@ -8,5 +8,13 @@ namespace TechDaniels.IdentityServer.Data
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<LoginPolicy> LoginPolicies { get; set; }
         public DbSet<ExternalLogin> ExternalLogins { get; set; }
+
+        public IdentityServerDbContext()
+        {
+        }
+
+        public IdentityServerDbContext(DbContextOptions<IdentityServerDbContext> options) : base(options)
+        {
+        }
     }
 }

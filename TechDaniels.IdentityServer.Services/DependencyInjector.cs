@@ -9,7 +9,7 @@ namespace TechDaniels.IdentityServer.Services
     {
         public static void InjectAdminServicesDependencies(this IServiceCollection services)
         {
-            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IUserService, UserService>();
             services.AddScoped<IPasswordCryptor, BCryptPasswordCryptor>();
         }
 

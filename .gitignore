@@ -15,3 +15,7 @@
 /TechDaniels.IdentityServer.Domain/obj
 /TechDaniels.IdentityServer.Services/bin/Debug/net8.0
 /TechDaniels.IdentityServer.Services/obj
+/bin/Debug
+/obj
+/TechDaniels.IdentityServer.AuthAPI/bin/Debug/net8.0
+/TechDaniels.IdentityServer.AuthAPI/obj

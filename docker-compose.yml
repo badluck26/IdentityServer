@@ -1,0 +1,50 @@
+services:
+  techdaniels.identityserver.adminapi:
+    image: ${DOCKER_REGISTRY-}techdanielsidentityserveradminapi
+    build:
+      context: .
+      dockerfile: TechDaniels.IdentityServer.AdminAPI/Dockerfile
+    depends_on:
+      - techdaniels.identityserver.storage-mssql-server
+    networks:
+      - app-network
+    ports:
+      - "9000:8080"   # HTTP
+      - "9001:8081"  # HTTPS
+
+  techdaniels.identityserver.authapi:
+    image: ${DOCKER_REGISTRY-}techdanielsidentityserverauthapi
+    build:
+      context: .
+      dockerfile: TechDaniels.IdentityServer.AuthAPI/Dockerfile
+    depends_on:
+      - techdaniels.identityserver.storage-mssql-server
+    networks:
+      - app-network
+    ports:
+      - "9010:8080"   # HTTP
+      - "9011:8081"  # HTTPS
+
+  techdaniels.identityserver.storage-mssql-server:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "6ulvA3zYk93j30gLF3mAHot"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+    volumes:
+      - 'dbdata:/var/opt/mssql'
+    networks:
+      - app-network
+
+volumes:
+  dbdata:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge
+
+
+      

@@ -8,9 +8,7 @@ CREATE TABLE AppUsers (
 	FirstName nvarchar(255) NOT NULL,
 	LastName nvarchar(255) NOT NULL,
 	PasswordHash nvarchar(60) NULL,
-	LoginPolicyId uniqueidentifier UNIQUE,
-	PRIMARY KEY (Id),
-	FOREIGN KEY (LoginPolicyId) REFERENCES LoginPolicies(Id)
+	PRIMARY KEY (Id)
 );
 
 CREATE TABLE ExternalLogins (
@@ -19,7 +17,7 @@ CREATE TABLE ExternalLogins (
 	UpdateDate DateTime NULL,
 	CreatedBy nvarchar(32) NOT NULL,
     UpdatedBy nvarchar(32) NULL,
-	AppUserId uniqueidentifier NOT NULL UNIQUE,
+	AppUserId uniqueidentifier NOT NULL,
 	Authenticator nvarchar(32) NOT NULL,
 	ExternalId uniqueidentifier NOT NULL UNIQUE,
 	PRIMARY KEY (Id),
@@ -38,5 +36,5 @@ CREATE TABLE LoginPolicies (
 	UnblockDate Datetime NULL,
     FailedLoginAttempts int DEFAULT(0) NOT NULL,
 	PRIMARY KEY (Id),
-	FOREIGN KEY (AppUserId) REFERENCES AppUser(Id)
+	FOREIGN KEY (AppUserId) REFERENCES AppUsers(Id)
 );

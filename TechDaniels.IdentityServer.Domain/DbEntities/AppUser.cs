@@ -11,9 +11,6 @@ namespace TechDaniels.IdentityServer.Domain.DbEntities
         public string Email { get; set; }
         public string PasswordHash { get; set; }
 
-        [ForeignKey(nameof(LoginPolicy))]
-        public Guid LoginPolicyId { get; set; }
-
         public virtual LoginPolicy LoginPolicy { get; set; }
     }
 }

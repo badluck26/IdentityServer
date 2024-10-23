@@ -10,10 +10,9 @@ namespace TechDaniels.IdentityServer.Data
 
             EnsureDatabase.For.SqlDatabase(connectionString);
 
-            var upgrader =
-                DeployChanges.To
+            var upgrader = DeployChanges.To
                     .SqlDatabase(connectionString)
-                    .WithScriptsFromFileSystem($"{path}/Scripts")
+                    .WithScriptsFromFileSystem($"../src/TechDaniels.IdentityServer.Data/Scripts")
                     .WithTransaction()
                     .LogToConsole()
                     .Build();
